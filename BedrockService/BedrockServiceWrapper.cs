@@ -259,7 +259,7 @@ namespace BedrockService
                 
                 var duplicateV4 = bedrockServers.GroupBy(x => x.ServerConfig.ServerPort4)
                     .Where(g => g.Count() > 1)
-                    .Select(y => new ServerConfig() { ServerPort4 = y.Key })
+                    .Select(y => new ClientConfig() { ServerPort4 = y.Key })
                     .ToList();
                 var duplicateV4Servers = bedrockServers.Where(t => duplicateV4.Select(r => r.ServerPort4).Contains(t.ServerConfig.ServerPort4)).ToList();
                 if (duplicateV4Servers.Count() > 0 )
@@ -268,7 +268,7 @@ namespace BedrockService
                 }
                 var duplicateV6 = bedrockServers.GroupBy(x => x.ServerConfig.ServerPort6)
                     .Where(g => g.Count() > 1)
-                    .Select(y => new ServerConfig() { ServerPort6 = y.Key })
+                    .Select(y => new ClientConfig() { ServerPort6 = y.Key })
                     .ToList();
                 var duplicateV6Servers = bedrockServers.Where(t => duplicateV6.Select(r => r.ServerPort6).Contains(t.ServerConfig.ServerPort6)).ToList();
                 if (duplicateV6Servers.Count() > 0)
@@ -277,7 +277,7 @@ namespace BedrockService
                 }
                 var duplicateName = bedrockServers.GroupBy(x => x.ServerConfig.ServerName)
                     .Where(g => g.Count() > 1)
-                    .Select(y => new ServerConfig() { ServerName = y.Key })
+                    .Select(y => new ClientConfig() { ServerName = y.Key })
                     .ToList();
                 var duplicateNameServers = bedrockServers.Where(t => duplicateName.Select(r => r.ServerName).Contains(t.ServerConfig.ServerName)).ToList();
                 if (duplicateNameServers.Count() > 0)

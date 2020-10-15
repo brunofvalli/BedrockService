@@ -26,7 +26,7 @@ namespace BedrockService
         
         const string worldsFolder = "worlds";
         const string startupMessage = "INFO] Server started.";
-        public BedrockServerWrapper( ServerConfig serverConfig, BackupConfig backupConfig)
+        public BedrockServerWrapper( ClientConfig serverConfig, BackupConfig backupConfig)
         {
             
             ServerConfig = serverConfig;
@@ -34,7 +34,7 @@ namespace BedrockService
            
         }
         public BackgroundWorker Worker { get; set; }
-        public ServerConfig ServerConfig { get; set; }
+        public ClientConfig ServerConfig { get; set; }
 
         public BackupConfig BackupConfig { get; set; }
         public bool BackingUp { get; set; }
