@@ -18,7 +18,7 @@ namespace BedrockClient
         public static void Connect(ConsoleWriteLine consoleWriteLine, int portNumber)
         {
             var binding = new NetTcpBinding();
-            var url = $"net.tcp://localhost:{19134}/MinecraftConsole";
+            var url = $"net.tcp://localhost:{portNumber}/MinecraftConsole";
             var address = new EndpointAddress(url);
             var channelFactory =
                 new ChannelFactory<IWCFConsoleServer>(binding, address);

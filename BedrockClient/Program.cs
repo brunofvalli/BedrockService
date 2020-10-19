@@ -1,6 +1,7 @@
 ﻿using BedrockService;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -15,6 +16,11 @@ namespace BedrockClient
         {
             Console.Title = "Minecraft Bedrock Service Console";
             Console.WriteLine("Minecraft Bedrock Service Console");
+
+            List<Process> windowsList = new List<Process>();
+
+
+
 
             ClientConnector.Connect(Console.WriteLine);
 
